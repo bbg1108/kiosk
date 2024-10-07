@@ -23,7 +23,7 @@
     </v-dialog>
 
     <!-- 쿠폰결제화면 -->
-    <v-dialog v-model="localDialog2" class="payment-dialog">
+    <v-dialog v-model="localDialog2" class="payment-dialog" max-width="600">
       <v-card class="order-summary">
         <v-card-title class="order-summary-title">쿠폰 결제</v-card-title>
         <v-card class="payment-content">
