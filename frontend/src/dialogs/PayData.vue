@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 카드결제화면 -->
-    <v-dialog v-model="localDialog1" class="payment-dialog">
+    <v-dialog v-model="localDialog1" class="payment-dialog" max-width="600">
       <v-card class="order-summary">
         <v-card-title class="order-summary-title">카드 결제</v-card-title>
         <v-card class="payment-content">
@@ -106,7 +106,6 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .order-summary {
-  max-width: 600px;
   margin: 0 auto;
   background-color: #ffffff;
   border-radius: 12px;

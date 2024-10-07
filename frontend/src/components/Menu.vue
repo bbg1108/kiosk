@@ -51,9 +51,6 @@ export default {
   },
   methods: {
     addToCart(item) {
-      if (item.p_division == 'set') {
-        this.settingSetMenu(item);
-      }
       EventBus.$emit('add-to-cart', item);
     },
 

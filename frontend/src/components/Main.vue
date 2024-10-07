@@ -29,8 +29,10 @@ export default {
 }
 
 .action-button {
-  width: 150px; 
-  height: 150px;
+  width: 350px; 
+  min-height: 350px;
   margin: 0 10px;
+  font-size: 30px;
+  border-radius: 30px;
 }
 </style>

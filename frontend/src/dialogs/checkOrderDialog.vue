@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog">
+  <v-dialog v-model="dialog" max-width="700">
     <!-- 팝업 창 내용 시작 -->
     <v-card class="order-summary">
       <v-card-title class="order-summary-title">주문 내역 확인</v-card-title>
@@ -94,7 +94,6 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .order-summary {
-  max-width: 700px;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 15px;
