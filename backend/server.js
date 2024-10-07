@@ -47,7 +47,7 @@ app.post('/order', async (req, res) => {
     const client = await pool.connect();
     const date = new Date();
     client.query(`INSERT INTO order1(name, date) VALUES('${message}', '${date}')`);
-    // 아두이노 전송
+    //아두이노 전송
     /*port2.write(message, (err) => {
       if (err) {
         return console.log('Error:', err.message);
