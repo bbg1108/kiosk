@@ -90,13 +90,10 @@ export default {
       const selectedItems = this.$store.state.items.map(item => `${item.name}(${item.count}개)`).join(', ');
       setTimeout(() => {
         const message = `주문내역: ${selectedItems}\n총 금액: ${this.totalPrice}원`;
-        if (confirm(message)) {
-          console.log("message: ", message)
           // API를 호출하여 아두이노로 데이터 전송
           axios.post('http://localhost:8000/order', {
             message: message            
           });
-        }
         this.$store.commit('delAllItem');
         location.href = "http://localhost:8080/";
       }, 1000);

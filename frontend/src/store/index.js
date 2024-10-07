@@ -32,15 +32,6 @@ export default new Vuex.Store({
             state.items = [];
         },
 
-        updateItemPrice(state, {itemName, price}) { // 물품의 가격을 업데이트 (현재 사용안함)
-            const item = state.items.find(item => item.name == itemName);
-            if (item) {
-                item.price = parseInt(price);
-                console.log(item)
-                console.log(item.price)
-            }
-        },
-
         updateTotalPrice(state, totalPrice) {    // 합계를 업데이트
             state.totalPrice = totalPrice;
         },

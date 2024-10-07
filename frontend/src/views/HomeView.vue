@@ -2,17 +2,17 @@
   <!--<div class="payment-complete">
     <h1>결제가 완료되었습니다.</h1>
   </div>-->
-  <hello-world/>
+  <Main/>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import Main from '../components/Main'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
+      Main,
     },
   }
 </script>

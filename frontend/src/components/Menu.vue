@@ -46,6 +46,8 @@ export default {
   },
   mounted() {
     EventBus.$on('sendMenuCategory', this.getDataFromServer);
+    EventBus.$on('prev', this.prevPage);
+    EventBus.$on('next', this.nextPage);
   },
   methods: {
     addToCart(item) {
@@ -53,10 +55,6 @@ export default {
         this.settingSetMenu(item);
       }
       EventBus.$emit('add-to-cart', item);
-    },
-
-    settingSetMenu(item) {
-      // alert(`이것은 ${item.p_name}다.`)
     },
 
     async getDataFromServer(category) {

@@ -32,6 +32,10 @@ export default {
   mounted() {
     EventBus.$on('add-to-cart', this.addToOrder);   // 이벤트 버스로 메뉴의 물품 데이터를 받아옴
     EventBus.$on('clearAll', this.clearOrderList);  // count 컴포넌트에서 전체삭제 버튼을 누를 경우 이벤트 버스를 받아옴
+    EventBus.$on('itemCount', (item) => {
+      const { name, count } = item;
+      this.increaseCount(name, count)
+    });
   },
   methods: {
     addToOrder(item) {  // 주문 목록에 물품 데이터를 추가하는 함수
@@ -48,17 +52,15 @@ export default {
       if (this.orderList[itemName].count > 1) {
         this.orderList[itemName].count -= 1;
         this.orderList[itemName].price = this.orderList[itemName].unitPrice * this.orderList[itemName].count;
-        //this.$store.commit('updateItemPrice', itemName, this.orderList[itemName].price); (필요 없음)
         console.log("이름: ", itemName, "가격: ", this.orderList[itemName].price)
       } else {
         this.deleteItem(itemName);
       }
     },
 
-    increaseCount(itemName) { // 물품 개수를 증가하는 함수
-      this.orderList[itemName].count += 1;
+    increaseCount(itemName, cnt=1) { // 물품 개수를 증가하는 함수
+      this.orderList[itemName].count += cnt;
       this.orderList[itemName].price = this.orderList[itemName].unitPrice * this.orderList[itemName].count;
-      //this.$store.commit('updateItemPrice', {itemName: itemName, price: this.orderList[itemName].price}); (필요 없음)
       console.log("이름: ", itemName, "가격: ", this.orderList[itemName].price)
     },
 

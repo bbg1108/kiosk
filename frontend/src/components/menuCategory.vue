@@ -14,9 +14,9 @@ import { EventBus } from '../main';
     data() {
       return {
         categories: [
-          { name: '세트',
+          { name: '세트메뉴',
             division: 'set' },
-          { name: '버거',
+          { name: '단품',
             division: 'burger' },
           { name: '사이드',
             division: 'side' },

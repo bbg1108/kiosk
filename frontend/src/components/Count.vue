@@ -31,6 +31,8 @@ export default {
     EventBus.$on('sendItemName', (itemName) => {  // 삭제할 물품의 이름을 받아옴
       this.$delete(this.orderList, itemName);
     });
+    EventBus.$on('openWindow', this.openDialog);
+    EventBus.$on('deleteOrder', this.clearAll);
   },
   methods: {
     clearAll() {  // 물품 데이터 전체를 삭제하는 함수
@@ -43,7 +45,15 @@ export default {
       if (this.totalPrice == 0) {
         alert("총 금액이 0원입니다. 메뉴를 선택하세요.")
       }
-      else this.dialog = true;
+      else {
+        this.dialog = true;
+        this.speak('결제해주세요');
+      }
+    },
+    speak(message) {
+      const utterance = new SpeechSynthesisUtterance(message);
+      utterance.lang = 'ko-KR';
+      window.speechSynthesis.speak(utterance);
     },
 
     addToOrder(item) {  // 주문 내역 확인에 물품 데이터를 추가하는 함수
@@ -52,7 +62,7 @@ export default {
       }
       this.orderList[item.p_name].count += 1;
       this.orderList[item.p_name].price = this.orderList[item.p_name].unitPrice;
-      console.log("성곤!!!!!", this.orderList[item.p_name].price)
+      console.log("성공", this.orderList[item.p_name].price)
     },
   },
   computed: {
