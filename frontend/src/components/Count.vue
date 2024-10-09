@@ -103,6 +103,8 @@ export default {
   /* 전체 영역 스타일 */
   padding: 2em;
   margin-top: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   background-color: #f8f8f8;
 }
 

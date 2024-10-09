@@ -19,8 +19,8 @@
       </div>
     </div>
     <div class="pagination-buttons">
-      <v-btn @click="prevPage" color="primary" class="page-btn">이전</v-btn>
-      <v-btn @click="nextPage" color="primary" class="page-btn">다음</v-btn>
+      <v-btn @click="prevPage" color="dark" class="page-btn">이전</v-btn>
+      <v-btn @click="nextPage" color="dark" class="page-btn">다음</v-btn>
     </div>
   </div>
 </template>
@@ -164,10 +164,11 @@ export default {
 }
 
 .page-btn {
+  flex-grow: 1;
   padding: 15px 30px;
   margin: 0 10px;
   border: none;
-  border-radius: 30px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;

@@ -1,11 +1,11 @@
 <template>
-    <section>
+    <div>
       <ul class="category-list">
         <li v-for="(category, index) in categories" :key="index">
           <v-btn x-large @click="openMenu(category.division)" color="primary" class="category-item">{{ category.name }}</v-btn>
         </li>
       </ul>
-    </section>
+    </div>
 </template>
   
 <script>
@@ -47,7 +47,7 @@ import { EventBus } from '../main';
 .category-item {
   /* 카테고리 버튼 스타일 */ 
   flex: 1;
-  width: 23.5em;
+  width: 24.5vw;
   user-select: none; /* 텍스트 드래그 방지 */
   margin-right: 0.1em;
 }

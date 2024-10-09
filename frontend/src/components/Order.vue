@@ -92,7 +92,7 @@ export default {
 <style scoped>
 .order-container {
   /* 주문 목록을 감싸는 컨테이너 스타일 */
-  max-width: 600px;
+  max-width: 600vw;
   margin: 20px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
